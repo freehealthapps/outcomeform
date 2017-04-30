@@ -1,0 +1,422 @@
+﻿{{#ds1}}
+<!-- Version 1 -->
+{{#RttWeek}}
+    <table class="table bordered-black condensed" style="width: 153.5mm; margin-top: 5px!important;">
+        <tr>
+            <th class="bg-grayLight" style="width: 20mm">&nbsp;</th>
+            <th class="bg-grayLight" style="width: 92mm"><b>RTT Status:</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>Treatment</b> (one Treatment status to be entered for each attendance)</th>
+            <th class="bg-grayLight" style="width: 24mm"><b>Status</b></th>
+            <th class="bg-grayLight" style="width: 16mm"><b>Tick</b></th>
+        </tr>
+        {{#isClockRunning}}
+        <tr>
+            <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>FOLLOW UP APPT REQ</b></td>
+            <td>Treatment plan to be agreed i.e. awaiting reports, diagnostics etc.</td>
+            <td>Clock Ticking</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{#onElectiveWaitingList}}
+            <tr>
+                <td class="bg-grayLight"><strike>Treatment given at this appointment, including admitted today from clinic</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{^onElectiveWaitingList}}
+            <tr>
+                <td>Treatment given at this appointment, including admitted today from clinic</td>
+                <td>Clock Stop</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{#isNotFound}}
+        <tr>
+            <td>Treatment previously given including subsequent treatment - continue to follow up</td>
+            <td>Clock Inactive</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{/isNotFound}}
+        {{^isNotFound}}
+        <tr>
+            <td class="bg-grayLight"><strike>Treatment previously given including subsequent treatment - continue to follow up</strike></td>
+            <td class="bg-grayLight"><strike>Clock Inactive</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        {{/isNotFound}}
+        {{/isClockRunning}}
+        {{^isClockRunning}}
+        <tr>
+            <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>FOLLOW UP APPT REQ</b></td>
+            <td class="bg-grayLight"><strike>Treatment plan to be agreed i.e. awaiting reports, diagnostics etc.</strike></td>
+            <td class="bg-grayLight"><strike>Clock Ticking</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        <tr>
+            <td class="bg-grayLight"><strike>Treatment given at this appointment, including admitted today from clinic</strike></td>
+            <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        <tr>
+            <td>Treatment previously given including subsequent treatment - continue to follow up</td>
+            <td>Clock Inactive</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{/isClockRunning}}
+
+        {{#isClockStopped}}
+        <tr>
+            <td style="vertical-align: middle; text-align: center;"><b>NEW TREATMENT</b></td>
+            <td>Patient requires a new treatment</td>
+            <td>Clock Start</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{/isClockStopped}}
+        {{^isClockStopped}}
+        <tr>
+            <td style="vertical-align: middle; text-align: center;"><b>NEW TREATMENT</b></td>
+            <td class="bg-grayLight"><strike>Patient requires a new treatment</strike></td>
+            <td class="bg-grayLight"><strike>Clock Start</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        {{/isClockStopped}}
+
+        {{#isClockRunning}}
+        {{#onElectiveWaitingList}}
+            <tr>
+                <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>WATCHFUL WAIT</b></td>
+                <td class="bg-grayLight"><strike>Commence watchful wait/active surveillance - initiated by the Consultant</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+            <tr>
+                <td class="bg-grayLight"><strike>Commence watchful wait/active surveillance - initiated by the Patient</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{^onElectiveWaitingList}}
+            <tr>
+                <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>WATCHFUL WAIT</b></td>
+                <td>Commence watchful wait/active surveillance - initiated by the Consultant</td>
+                <td>Clock Stop</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+            <tr>
+                <td>Commence watchful wait/active surveillance - initiated by the Patient</td>
+                <td>Clock Stop</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{#isNotFound}}
+        <tr>
+            <td>Continue watchful wait/active surveillance</td>
+            <td>Clock Inactive</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{/isNotFound}}
+        {{^isNotFound}}
+        <tr>
+            <td class="bg-grayLight"><strike>Continue watchful wait/active surveillance</strike></td>
+            <td class="bg-grayLight"><strike>Clock Inactive</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        {{/isNotFound}}
+        {{/isClockRunning}}
+        {{^isClockRunning}}
+            <tr>
+                <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>WATCHFUL WAIT</b></td>
+                <td class="bg-grayLight"><strike>Commence watchful wait/active surveillance - initiated by the Consultant</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+            <tr>
+                <td class="bg-grayLight"><strike>Commence watchful wait/active surveillance - initiated by the Patient</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+            <tr>
+                <td>Continue watchful wait/active surveillance</td>
+                <td>Clock Inactive</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+        {{/isClockRunning}}
+
+        <tr>
+            <td rowspan="2" style="vertical-align: middle; text-align: center;"><b>ADD TO LIST</b></td>
+            <td>Add to Inpatient/Daycase/Endocopy/Dermatology waiting list</td>
+            <td>Clock Ticking</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+
+        {{#onElectiveWaitingList}}
+            <tr>
+                <td class="bg-grayLight"><strike>Add to planned waiting list i.e. surveillance</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+            <tr>
+                <td rowspan="4" style="vertical-align: middle; text-align: center;"><b>REFER TO</b></td>
+                <td class="bg-grayLight"><strike>Refer for treatment i.e. Physiotherapy, Orthotics, OT, Micro suction clearance</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{^onElectiveWaitingList}}
+            <tr>
+                <td>Add to planned waiting list i.e. surveillance</td>
+                <td>Clock Stop</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+            <tr>
+                <td rowspan="4" style="vertical-align: middle; text-align: center;"><b>REFER TO</b></td>
+                <td>Refer for treatment i.e. Physiotherapy, Orthotics, OT, Micro suction clearance</td>
+                <td>Clock Stop</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{#onElectiveWaitingList}}
+            <tr>
+                <td class="bg-grayLight"><strike>Refer to other provider</strike></td>
+                <td class="bg-grayLight"><strike>Clock Stop</strike></td>
+                <td class="bg-grayLight"><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        {{^onElectiveWaitingList}}
+            <tr>
+                <td>Refer to other provider</td>
+                <td>Clock Stop</td>
+                <td><div class="tickbox"></div></td>
+            </tr>
+        {{/onElectiveWaitingList}}
+        <tr>
+            <td>Refer to another MFT Consultant - for same condition only</td>
+            <td>Clock Ticking</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{#isClockStopped}}
+        {{#IsNotFound}}
+        <tr>
+            <td>Refer to another MFT Consultant - treatment given previously - for same condition only</td>
+            <td>Clock Inactive</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{/IsNotFound}}
+        {{^IsNotFound}}
+        <tr>
+            <td class="bg-grayLight"><strike>Refer to another MFT Consultant - treatment given previously - for same condition only</strike></td>
+            <td class="bg-grayLight"><strike>Clock Inactive</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        {{/IsNotFound}}
+        {{/isClockStopped}}
+        {{^isClockStopped}}
+        <tr>
+            <td class="bg-grayLight"><strike>Refer to another MFT Consultant - treatment given previously - for same condition only</strike></td>
+            <td class="bg-grayLight"><strike>Clock Inactive</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        {{/isClockStopped}}
+
+        <tr>
+            <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>DISCHARGE</b></td>
+            <td>Discharge - No further contact required</td>
+            <td>END</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        <tr>
+            <td>Discharge - Patient declined treatment</td>
+            <td>END</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+
+		{{#onElectiveWaitingList}}
+			<tr>
+				<td class="bg-grayLight"><strike>Discharge - Treatment complete today or previously given</strike></td>
+				<td class="bg-grayLight"><strike>END</strike></td>
+				<td class="bg-grayLight"><div class="tickbox"></div></td>
+			</tr>
+
+			<tr>
+				<td rowspan="3" style="vertical-align: middle; text-align: center;"><b>DNA</b></td>
+				<td class="bg-grayLight"><strike>DNA - discharge back to referrer</strike></td>
+				<td class="bg-grayLight"><strike>END</strike></td>
+				<td class="bg-grayLight"><div class="tickbox"></div></td>
+			</tr>
+		{{/onElectiveWaitingList}}
+		{{^onElectiveWaitingList}}
+			<tr>
+				<td>Discharge - Treatment complete today or previously given</td>
+				<td>END</td>
+				<td><div class="tickbox"></div></td>
+			</tr>
+
+			<tr>
+				<td rowspan="3" style="vertical-align: middle; text-align: center;"><b>DNA</b></td>
+				<td>DNA - discharge back to referrer</td>
+				<td>END</td>
+				<td><div class="tickbox"></div></td>
+			</tr>
+        {{/onElectiveWaitingList}}
+  
+        <tr>
+            <td>
+                DNA - <b>reappoint to be used only for clinical &amp; safety reasons</b>
+                {{#isSerialDna}}
+                &nbsp;&nbsp;<span class="fg-red"><b>Warning! {{NoSerialDNA}} Serial DNAs</b></span>
+                {{/isSerialDna}}
+            </td>
+            <td>Clock Ticking</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{#isClockStopped}}
+        <tr>
+            <td>
+                DNA - <b>reappoint has had previous treatment</b>
+                {{#isSerialDna}}
+                &nbsp;&nbsp;<span class="fg-red"><b>Warning! {{NoSerialDNA}} Serial DNAs</b></span>
+                {{/isSerialDna}}
+            </td>
+            <td>Clock Inactive</td>
+            <td><div class="tickbox"></div></td>
+        </tr>
+        {{/isClockStopped}}
+        {{^isClockStopped}}
+        <tr>
+            <td class="bg-grayLight">
+                <strike>DNA - <b>reappoint has had previous treatment</b></strike>
+                {{#isSerialDna}}
+                &nbsp;&nbsp;<span class="fg-red"><b>Warning! {{NoSerialDNA}} Serial DNAs</b></span>
+                {{/isSerialDna}}
+            </td>
+            <td class="bg-grayLight"><strike>Clock Inactive</strike></td>
+            <td class="bg-grayLight"><div class="tickbox"></div></td>
+        </tr>
+        {{/isClockStopped}}
+    </table>
+{{/RttWeek}}
+<!-- Not on RTT Pathway do not make any outcome inactive  -->
+{{^RttWeek}}
+<table class="table bordered-black condensed" style="width: 153.5mm; margin-top: 5px!important;">
+    <tr>
+        <th class="bg-grayLight" style="width: 20mm">&nbsp;</th>
+        <th class="bg-grayLight" style="width: 92mm"><b>RTT Status:</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>Treatment</b> (one Treatment status to be entered for each attendance)</th>
+        <th class="bg-grayLight" style="width: 24mm"><b>Status</b></th>
+        <th class="bg-grayLight" style="width: 16mm"><b>Tick</b></th>
+    </tr>
+    <tr>
+        <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>FOLLOW UP APPT REQ</b></td>
+        <td>Treatment plan to be agreed i.e. awaiting reports, diagnostics etc.</td>
+        <td>Clock Ticking</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Treatment given at this appointment, including admitted today from clinic</td>
+        <td>Clock Stop</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Treatment previously given including subsequent treatment - continue to follow up</td>
+        <td>Clock Inactive</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td style="vertical-align: middle; text-align: center;"><b>NEW TREATMENT</b></td>
+        <td>Patient requires a new treatment</td>
+        <td>Clock Start</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>WATCHFUL WAIT</b></td>
+        <td>Commence watchful wait/active surveillance - initiated by the Consultant</td>
+        <td>Clock Stop</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Commence watchful wait/active surveillance - initiated by the Patient</td>
+        <td>Clock Stop</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Continue watchful wait/active surveillance</td>
+        <td>Clock Inactive</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="vertical-align: middle; text-align: center;"><b>ADD TO LIST</b></td>
+        <td>Add to Inpatient/Daycase/Endocopy/Dermatology waiting list</td>
+        <td>Clock Ticking</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Add to planned waiting list i.e. surveillance</td>
+        <td>Clock Stop</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+
+    <tr>
+        <td rowspan="4" style="vertical-align: middle; text-align: center;"><b>REFER TO</b></td>
+        <td>Refer for treatment i.e. Physiotherapy, Orthotics, OT, Micro suction clearance</td>
+        <td>Clock Stop</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Refer to other provider</td>
+        <td>Clock Stop</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Refer to another MFT Consultant - for same condition only</td>
+        <td>Clock Ticking</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Refer to another MFT Consultant - treatment given previously - for same condition only</td>
+        <td>Clock Inactive</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>DISCHARGE</b></td>
+        <td>Discharge - No further contact required</td>
+        <td>END</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Discharge - Patient declined treatment</td>
+        <td>END</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>Discharge - Treatment complete today or previously given</td>
+        <td>END</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+
+    <tr>
+        <td rowspan="3" style="vertical-align: middle; text-align: center;"><b>DNA</b></td>
+        <td>DNA - discharge back to referrer</td>
+        <td>END</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>
+            DNA - <b>reappoint to be used only for clinical &amp; safety reasons</b>
+            {{#isSerialDna}}
+            &nbsp;&nbsp;<span class="fg-red"><b>Warning! {{NoSerialDNA}} Serial DNAs</b></span>
+            {{/isSerialDna}}
+        </td>
+        <td>Clock Ticking</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+    <tr>
+        <td>
+            DNA - <b>reappoint has had previous treatment</b>
+            {{#isSerialDna}}
+            &nbsp;&nbsp;<span class="fg-red"><b>Warning! {{NoSerialDNA}} Serial DNAs</b></span>
+            {{/isSerialDna}}
+        </td>
+        <td>Clock Inactive</td>
+        <td><div class="tickbox"></div></td>
+    </tr>
+</table>
+{{/RttWeek}}
+{{/ds1}}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Outpatient Attendance Form</title>
+	<meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="{{ServerUrl}}/Css/form.css?v=2" />
+</head>
+<body>
+    {{#cl}}
+    {{#Dataset}}
+    <div class="page">
+        <!-- Header and image -->
+        {{_OutpatientAttendanceForm/Header}}
+
+        <div class="row">
+            <div class="left" style="width:155mm">
+                <!-- Clinic Details -->
+                {{_OutpatientAttendanceForm/ClinicDetails}}
+
+                <!-- Patient Details -->
+                {{_OutpatientAttendanceForm/PatientDetails}}
+
+                <div class="left" style="width: 154.5mm;padding-top:2px;">
+                    <!-- Follow Up Attendance -->
+                    {{_OutpatientAttendanceForm/FollowUpAttendance}}
+
+                    <!-- Outcome options form -->
+                    {{_OutpatientAttendanceForm/OutcomesV1}}
+
+                    <!-- Not seen -->
+                    {{_OutpatientAttendanceForm/NotSeen}}
+
+                    <!-- Low Priority Procedures -->
+                    {{_OutpatientAttendanceForm/LowPriorityProceduresV1}}
+                </div>
+            </div>
+
+            <!-- Pathway Summary  -->
+            {{_OutpatientAttendanceForm/PathwaySummary}}
+
+            <!-- Pathway Timeline -->
+            {{_OutpatientAttendanceForm/PathwayTimeline}}
+        </div>
+    </div>
+    {{/Dataset}}
+    {{/cl}}
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿{{#ds1}}
+<div class="left" style="width:45mm; padding-left: 15px;">
+    {{#RttWeek}}
+    {{#isNotFound}}
+    <div class="row">
+        <div class="left">
+            <div class="fg-red" style="font-size: 28px; font-weight: bold">Pathway not found.</div>
+        </div>
+    </div>
+    {{/isNotFound}}
+    {{^isNotFound}}
+    <div class="row">
+        <div class="left">
+            {{#IsLongerThan18Weeks}}
+            <div class="fg-red" style="font-size: 54px; font-weight: bold">{{RttWeek}}</div>
+            {{/IsLongerThan18Weeks}}
+            {{^IsLongerThan18Weeks}}
+            <div class="fg-green" style="font-size: 54px; font-weight: bold">{{RttWeek}}</div>
+            {{/IsLongerThan18Weeks}}
+        </div>
+        <div class="left" style="padding-top: 20px;">
+            {{#isClockRunning}}
+            <span class="fg-green" style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;running</span>
+            {{/isClockRunning}}
+            {{^isClockRunning}}
+            <span class="fg-red" style="font-size: 20px; font-weight: bold;">&nbsp;&nbsp;stopped</span>
+            {{/isClockRunning}}
+            <span class="fg-darkBlue" style="font-size: 26px; font-weight: bold;"><br />/ 18 wks</span>
+        </div>
+    </div>
+    {{/isNotFound}}
+    {{/RttWeek}}
+    {{^RttWeek}}
+    <div class="row">
+        <div class="left">
+            <span class="fg-darkBlue" style="font-size: 26px; font-weight: bold;"><br />Non-RTT</span>
+        </div>
+    </div>
+    {{/RttWeek}}
+    <div class="row" style="padding-top:8px;">
+        <div class="left" style="width: 36mm;">Total DNA</div>
+        <div class="left">{{NoDNA}}</div>
+    </div>
+    <div class="row">
+        <div class="left" style="width: 36mm;">Serial DNA</div>
+        {{#NoSerialDNA}}
+        <div class="left">{{NoSerialDNA}}</div>
+        {{/NoSerialDNA}}
+        {{^NoSerialDNA}}
+        <div class="left">0</div>
+        {{/NoSerialDNA}}
+    </div>
+    <div class="row">
+        <div class="left" style="width: 36mm;">Reschedule by Hospital</div>
+        <div class="left">{{NoRescheduleHospital}}</div>
+    </div>
+    <div class="row">
+        <div class="left" style="width: 36mm;">Reschedule by Patient</div>
+        <div class="left">{{NoReschedulePatient}}</div>
+    </div>
+    <div class="row">
+        <div class="left" style="width: 36mm;">Cancellations</div>
+        <div class="left">{{NoCancellation}}</div>
+    </div>
+</div>
+{{/ds1}}

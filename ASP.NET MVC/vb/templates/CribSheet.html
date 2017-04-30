@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Outpatient Attendance Crib Sheet</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="{{ServerUrl}}/css/form.css?v=5" />
+</head>
+<body>
+    <div class="page-single">
+        <!-- Header and image -->
+        <div class="row">
+            <div class="left">
+                Outpatient Attendance Crib Sheet (v.0.0.2)<br />
+            </div>
+            <div class="span4">
+                <img src="{{ServerUrl}}/img/logo.jpg" align="right" />
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>Definitions</h3>
+        </div>
+        <div class="row">
+            <b>Active Monitoring (Also known as ‘watchful waiting’)</b><br />
+            <p>An 18 week clock may be stopped where it is clinically appropriate to start a period of monitoring in secondary care without clinical intervention or diagnostic procedures.  A new 18 week clock would start when a decision to treat is made following a period of active monitoring.</p>
+        </div>
+        <div class="row">
+            <b>Referral to Treatment (RTT)</b><br />
+            <p>An RTT period is the time between a person’s referral to a consultant-led service, which initiates a clock start, and the point at which the clock stops for any of the reasons set out in the RTT national clock rules, for example the start of first definitive treatment or a decision that treatment is not appropriate.</p>
+        </div>
+        <div class="row">
+            <b>Cancellation (Patient initiated)</b><br />
+            <p>A cancellation is when a patient gives any advance notice. A cancellation is a cancellation even if notice is very short. By cancelling an appointment a patient has shown a willingness to engage with the NHS.</p>
+        </div>
+        <div class="row">
+            <b>Did Not Attend (DNA)</b><br />
+            <p>Patients who have been informed of their date of admission or pre-assessment (inpatients/day cases), appointment date (outpatients, diagnostic appointment), and who without notifying the hospital did not attend for admission/ pre-assessment or OP appointment.</p>
+        </div>
+        <h3>Pathway Timeline Legend</h3>
+        <div style="float:left; width: 100%" >
+            {{#ds1}}
+            <div style="display:inline-block; width:45%; height:50px;" >
+                <div class="{{CssClass}} cribsheet-event">
+                    {{Code}}
+                </div>
+                <div class="cribsheet-panel">
+                    <div class="tm-title"><b>{{EventDescription}}</b></div>
+                    <div class="tm-description" style="height: 45px!important;max-height: 45px!important;" >
+                        {{LongDescription}}
+                    </div>
+                    <br/>
+                </div>
+            </div>
+            {{/ds1}}
+        </div>
+    </div>
+</body>
+</html>

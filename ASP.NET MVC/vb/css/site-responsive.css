@@ -1,0 +1,26 @@
+﻿ @media only screen and (max-width: 1024px) {
+    body { font-size: 14px; }
+
+    .grid {margin-bottom: 0px!important;}
+    .grid .row {margin-top: 0px!important;}
+
+    .grid.fluid .login .span6 {width: 95% !important;}
+    .grid.fluid .page-layout .span10 {width: 95% !important;}
+
+    .horizontal-menu li a { font-size: 16px; line-height: 16px; font-weight:600!important; padding:0!important}
+    .panel .panel-header { font-size: 16px; line-height: 16px; font-weight:600!important;}
+
+    .not-small-screen {display: none !important;visibility: hidden !important;}
+    .on-small-screen {display: block !important;visibility: visible !important;}
+}
+
+@media only screen and (max-width: 1280px) {
+    .grid {margin-bottom: 5px!important;}
+    .grid .row {margin-top: 5px!important;}
+
+    .grid.fluid .login .span6 {width: 95% !important;}
+    .grid.fluid .page-layout .span10 {width: 95% !important;}
+
+    .not-small-screen {display: none !important;visibility: hidden !important;}
+    .on-small-screen {display: block !important;visibility: visible !important;}
+}

@@ -1,0 +1,245 @@
+﻿{{#ds1}}
+<!-- Version 2 -->
+<table class="table bordered condensed" style="width: 153.5mm; border: 1px solid #000; margin-top: 5px!important; margin-left:1px;">
+    <tr>
+        <th class="bg-black fg-white" style="width: 92mm">Outcome</th>
+        <th class="bg-black fg-white" style="width: 29mm" colspan="2">New Appt</th>
+        <th class="bg-black fg-white" style="width: 29mm" colspan="2">FU Appt</th>
+    </tr>
+    {{#isClockRunning}}
+    <tr>
+        <td>Treatment plan to be agreed i.e. awaiting reports, diagnostics etc</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+    </tr>
+    <tr>
+        <td>Treatment given at this appointment, including admitted from clinic</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+    </tr>
+    <tr>
+        <td>Treatment Previously Given</td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+    </tr>
+    {{/isClockRunning}}
+    {{^isClockRunning}}
+    <tr>
+        <td class="bg-grayLight"><strike>Treatment plan to be agreed i.e. awaiting reports, diagnostics etc</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>No Action</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>No Action</strike></td>
+    </tr>
+    <tr>
+        <td class="bg-grayLight"><strike>Treatment given at this appointment, including admitted from clinic</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Stop</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Stop</strike></td>
+    </tr>
+    <tr>
+        <td class="bg-grayLight"><strike>Treatment Previously Given</strike></td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>No Action</strike></td>
+    </tr>
+    {{/isClockRunning}}
+
+    {{#isClockStopped}}
+    <tr>
+        <td>Patient requires a new treatment (same condition)</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><div class="tickbox"></div></td>
+        <td>Start</td>
+    </tr>
+    {{/isClockStopped}}
+    {{^iSClockedStopped}}
+    <tr>
+        <td class="bg-grayLight"><strike>Patient requires a new treatment (same condition)</strike></td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Start</strike></td>
+    </tr>
+    {{/iSClockedStopped}}
+
+    {{#isClockRunning}}
+    <tr>
+        <td>Commence Active Monitoring</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+    </tr>
+    {{/isClockRunning}}
+    {{^isClockRunning}}
+    <tr>
+        <td class="bg-grayLight"><strike>Commence Active Monitoring</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Stop</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Stop</strike></td>
+    </tr>
+    {{/isClockRunning}}
+
+
+    {{#isClockStopped}}
+    <tr>
+        <td>Continue with Active Monitoring</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+    </tr>
+    <tr>
+        <td>End Watchful Wait – Add to Waiting List</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><div class="tickbox"></div></td>
+        <td>Start</td>
+    </tr>
+    {{/isClockStopped}}
+    {{^isClockStopped}}
+    <tr>
+        <td class="bg-grayLight"><strike>Continue with Active Monitoring</strike></td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>No Action</strike></td>
+    </tr>
+    <tr>
+        <td class="bg-grayLight"><strike>End Watchful Wait – Add to Waiting List</strike></td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight">&nbsp;</td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Start</strike></td>
+    </tr>
+    {{/isClockStopped}}
+
+
+    <tr>
+        <td>Add to waiting list</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+    </tr>
+    <tr>
+        <td>Refer to AHP for treatment i.e. Orthotics, OT, Microsuction clearance</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+    </tr>
+    <tr>
+        <td>Refer to Other Provider (please state)</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+    </tr>
+
+    {{#isClockRunning}}
+    <tr>
+        <td>Treatment given and refer to another MFT Consultant</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+    </tr>
+    {{/isClockRunning}}
+    {{^isClockRunning}}
+    <tr>
+        <td class="bg-grayLight"><strike>Treatment given and refer to another MFT Consultant</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>No Action</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>No Action</strike></td>
+    </tr>
+    {{/isClockRunning}}
+
+    <tr>
+        <td>Treatment not yet given, refer to another MFT Consultant</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+    </tr>
+
+    {{#isClockRunning}}
+    <tr>
+        <td>Treatment not required under this specialty, refer to appropriate specialty</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop</td>
+    </tr>
+    {{/isClockRunning}}
+    {{^isClockRunning}}
+    <tr>
+        <td class="bg-grayLight"><strike>Treatment not required under this specialty, refer to appropriate specialty</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Stop</strike></td>
+        <td class="bg-grayLight"><div class="tickbox"></div></td>
+        <td class="bg-grayLight"><strike>Stop</strike></td>
+    </tr>
+    {{/isClockRunning}}
+
+    <tr>
+        <td>Discharge – No further contact</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+    </tr>
+    <tr>
+        <td>Discharge – Patient declined treatment</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+    </tr>
+    <tr>
+        <td>Discharge – Treated today or previously</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+    </tr>
+    <tr>
+        <td>Low Priority Procedure – Refer back to GP and Discharge</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+    </tr>
+    <tr>
+        <td>
+            DNA – Reappoint
+            {{#isSerialDna}}
+            &nbsp;&nbsp;<span class="fg-red"><b>Warning! {{NoSerialDNA}} Serial DNAs</b></span>
+            {{/isSerialDna}}
+        </td>
+        <td><div class="tickbox"></div></td>
+        <td>Stop/Start</td>
+        <td><div class="tickbox"></div></td>
+        <td>No Action</td>
+    </tr>
+    <tr>
+        <td>DNA – Discharge back to referrer</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+        <td><div class="tickbox"></div></td>
+        <td>End RTT</td>
+    </tr>
+</table>
+{{/ds1}}

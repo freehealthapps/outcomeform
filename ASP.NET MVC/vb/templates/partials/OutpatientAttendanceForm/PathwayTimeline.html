@@ -1,0 +1,60 @@
+﻿<div class="left" style="width: 40mm; padding-left: 5px;">
+    <h3>Pathway Timeline</h3>
+    {{#ds1}}
+    {{#isNotFound}}
+    <p class="fg-red">No events found.</p>
+    {{/isNotFound}}
+    {{/ds1}}
+    <ul class="timeline">
+        {{#ds2}}
+        <li class="{{CssClass}}">
+            {{Code}}
+            <div class="tm-panel">
+                <div class="tm-title">
+                    {{EventDate}}
+                    <span style="text-align: right; float: right;">{{WeeksWait}}&nbsp;&nbsp;</span>
+                </div>
+                <div class="tm-description">{{{EventDescription}}}</div>
+            </div>
+        </li>
+        {{/ds2}}
+    </ul>
+</div>
+
+
+{{#ds3}}
+<div class="left" style="padding-left: 5px; width: 40mm; font-size:10px;">
+    <b>Event Summary</b><br />
+    <b>{{StartDate}} to {{EndDate}}</b>
+    <ul class="tm-summary">
+        {{#ds4}}
+        <li class="code-summary">
+            {{NoEvents}}
+            <div class="tm-summary-panel">
+                <div class="tm-summary-title">
+                    {{Description}}
+                </div>
+            </div>
+        </li>
+        {{/ds4}}
+    </ul>
+</div>
+{{/ds3}}
+
+
+<div class="left" style="width: 40mm; padding-left: 5px;">
+    <ul class="timeline">
+        {{#ds5}}
+        <li class="{{CssClass}}">
+            {{Code}}
+            <div class="tm-panel">
+                <div class="tm-title">
+                    {{EventDate}}
+                    <span style="text-align: right; float: right;">{{WeeksWait}}&nbsp;&nbsp;</span>
+                </div>
+                <div class="tm-description">{{{EventDescription}}}</div>
+            </div>
+        </li>
+        {{/ds5}}
+    </ul>
+</div>
