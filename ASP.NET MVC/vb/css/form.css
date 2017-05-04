@@ -1,4 +1,13 @@
-﻿body{ width:210mm;height:295mm;font-size: 12px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 20px;padding-left: 10px;padding-right: 10px;}
+﻿/********************************************************************************************************
+  Original Copyright Matt Cutting & Matthew Bishop 2017
+  Contact for more details: 
+  Matt Cutting: 	matt@responsivehealth.co.uk
+  Matthew Bishop:	matthew.bishop@perspicacityltd.co.uk / 07545 878906
+  See https://github.com/freehealthapps/outcomeform
+  Or www.freehealthapps.org for more details, the latest version, and the license agreement
+********************************************************************************************************/
+
+body{ width:210mm;height:295mm;font-size: 12px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 20px;padding-left: 10px;padding-right: 10px;}
 
 .page {padding-top: 20px;padding-left: 10px;padding-right: 10px;padding-bottom: 20px;min-height: 285mm;page-break-after: always!important}
 .page-single {min-height: 285mm;}
